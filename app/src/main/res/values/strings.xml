@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">IndieBooks</string>
+    <string name="subtitulo_login">Bienvenido</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="login_google">Continuar con Google</string>
+    <string name="pregunta_cuenta">¿No tienes cuenta? Registrate</string>
+    <string name="registrate">Registrate</string>
+    <string name="nombre">Nombre</string>
+    <string name="Apellido">Apellido</string>
+    <string name="telefono">Telefono</string>
+    <string name="direccion">Dirección</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="usuario">Usuario</string>
+    <string name="inicio">Inicio</string>
+    <string name="carrito">Carrito</string>
+    <string name="ubicacion">Ubicación</string>
+    <string name="cuenta">Mi Cuenta</string>
+    <string name="poner_en_carrito">Añadir al carrito</string>
+    <string name="precio1">$64.000</string>
+    <string name="title1">Reinas Guerreras</string>
+    <string name="title6">Secuestro de piel</string>
+    <string name="price2">$58,000</string>
+    <string name="title2">Fraternalismo</string>
+    <string name="price3">$72,000</string>
+    <string name="title4">Romulhu</string>
+    <string name="title5">Preludio a una rosa</string>
+    <string name="price4">$75,000</string>
+    <string name="title3">Por si me voy y te dejo</string>
+    <string name="comprar">Finalizar Compra</string>
+    <string name="subtitle_car">Carrito de compras</string>
+    <string name="subtitle_car2">Conoce nuestra tienda física</string>
+    <string name="subtitle_car4">Visitanos en:</string>
+    <string name="perfil">Tu perfil</string>
+    <string name="update">Guardar Cambios</string>
+    <string name="sub_perfil">Tu perfil</string>
+    <string name="Tomar_foto">Tomar foto de usuario</string>
+</resources>

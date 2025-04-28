@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_head"
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:background="@color/orange"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/white"
+            android:scaleType="centerCrop"
+            android:src="@drawable/app_logo"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_foot1"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll_foot2"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageView
+            android:id="@+id/iv_home"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/home_azul" />
+
+        <ImageView
+            android:id="@+id/iv_car"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/carrito" />
+
+        <ImageView
+            android:id="@+id/iv_map"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/map" />
+
+        <ImageView
+            android:id="@+id/iv_user"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/user" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_foot2"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:id="@+id/tv_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/inicio"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_car"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/carrito"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_map"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ubicacion"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cuenta"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="520dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="124dp"
+        tools:ignore="MissingConstraints">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gl_books"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:columnCount="2"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:id="@+id/ll_book1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_columnWeight="1">
+
+                <ImageView
+                    android:id="@+id/iv_book"
+                    android:layout_width="180dp"
+                    android:layout_height="250dp"
+                    app:srcCompat="@drawable/libro_uno" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title1"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precio1"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btn_car"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/poner_en_carrito"
+                    android:backgroundTint="@color/blue"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_book2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_columnWeight="1">
+
+                <ImageView
+                    android:id="@+id/iv_book2"
+                    android:layout_width="180dp"
+                    android:layout_height="250dp"
+                    app:srcCompat="@drawable/libro_dos" />
+
+                <TextView
+                    android:id="@+id/tv_title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title2"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_price2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price3"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btn_car2"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/poner_en_carrito"
+                    android:backgroundTint="@color/blue"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_book3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_columnWeight="1">
+
+                <ImageView
+                    android:id="@+id/iv_book3"
+                    android:layout_width="180dp"
+                    android:layout_height="250dp"
+                    app:srcCompat="@drawable/libro_tres" />
+
+                <TextView
+                    android:id="@+id/tv_title3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title4"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_price3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precio1"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btn_car3"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/poner_en_carrito"
+                    android:backgroundTint="@color/blue"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_book4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_columnWeight="1">
+
+                <ImageView
+                    android:id="@+id/iv_book4"
+                    android:layout_width="180dp"
+                    android:layout_height="250dp"
+                    app:srcCompat="@drawable/libro_cuatro" />
+
+                <TextView
+                    android:id="@+id/tv_title4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title5"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_price4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price4"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btn_car4"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/poner_en_carrito"
+                    android:backgroundTint="@color/blue"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_book5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_columnWeight="1">
+
+                <ImageView
+                    android:id="@+id/iv_book5"
+                    android:layout_width="180dp"
+                    android:layout_height="250dp"
+                    app:srcCompat="@drawable/libro_cinco" />
+
+                <TextView
+                    android:id="@+id/tv_title5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title3"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_price5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price2"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btn_car5"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/poner_en_carrito"
+                    android:backgroundTint="@color/blue"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_book6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_columnWeight="1">
+
+                <ImageView
+                    android:id="@+id/iv_book6"
+                    android:layout_width="180dp"
+                    android:layout_height="250dp"
+                    app:srcCompat="@drawable/libro_seis" />
+
+                <TextView
+                    android:id="@+id/tv_title6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title6"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_price6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price2"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btn_car6"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/poner_en_carrito"
+                    android:backgroundTint="@color/blue"/>
+
+            </LinearLayout>
+        </androidx.gridlayout.widget.GridLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
