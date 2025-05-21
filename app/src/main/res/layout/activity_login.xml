@@ -74,7 +74,7 @@
         android:text="@string/login_google"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/tv_registrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/blue"
@@ -85,13 +85,15 @@
         app:iconSize="40dp"/>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_registrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
         android:text="@string/pregunta_cuenta"
         android:textSize="18sp"
         android:textColor="@color/blue"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -120,8 +122,9 @@
             android:layout_weight="1"
             android:backgroundTint="@color/blue"
             android:ems="10"
-            android:hint="@string/usuario"
-            android:inputType="textEmailAddress"
+            android:hint="@string/telefono"
+            android:textColor="@color/blue"
+            android:inputType="text"
             android:textColorHint="@color/blue" />
     </LinearLayout>
 
@@ -150,6 +153,7 @@
             android:backgroundTint="@color/blue"
             android:ems="10"
             android:hint="@string/contrasena"
+            android:textColor="@color/blue"
             android:inputType="textPassword"
             android:textColorHint="@color/blue" />
     </LinearLayout>

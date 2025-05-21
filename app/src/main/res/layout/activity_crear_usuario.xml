@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white">
-
 
     <LinearLayout
         android:id="@+id/ll_head"
@@ -19,7 +18,7 @@
 
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/logoImageView"
+            android:id="@+id/iv_logo"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_gravity="center"
@@ -41,49 +40,259 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tv_crearUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/crear_usuario"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/ll_entrada1_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_head"
+        tools:ignore="MissingConstraints" />
+
     <LinearLayout
-        android:id="@+id/ll_foot1"
+        android:id="@+id/ll_entrada1_admin"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ll_entrada2_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_name"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/user_blue" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blue"
+            android:ems="10"
+            android:textColor="@color/blue"
+            android:hint="@string/nombre"
+            android:inputType="text"
+            android:textColorHint="@color/blue" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_entrada2_admin"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ll_entrada3_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_first_name"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/user_blue" />
+
+        <EditText
+            android:id="@+id/et_first_name"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blue"
+            android:ems="10"
+            android:textColor="@color/blue"
+            android:hint="@string/Apellido"
+            android:inputType="text"
+            android:textColorHint="@color/blue" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_entrada3_admin"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ll_entrada4_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_phone"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/phone" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blue"
+            android:ems="10"
+            android:textColor="@color/blue"
+            android:hint="@string/telefono"
+            android:inputType="phone"
+            android:textColorHint="@color/blue"
+            tools:ignore="TextFields" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_entrada4_admin"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ll_entrada5_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_adress"
+            android:layout_width="35dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/mail" />
+
+        <EditText
+            android:id="@+id/et_adress"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blue"
+            android:ems="10"
+            android:textColor="@color/blue"
+            android:hint="@string/direccion"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/blue" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_entrada5_admin"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ll_entrada6_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_password"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/password" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="263dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blue"
+            android:ems="10"
+            android:textColor="@color/blue"
+            android:hint="@string/contrasena"
+            android:inputType="textPassword"
+            android:textColorHint="@color/blue" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_entrada6_admin"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btn_crear_usuario_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <ImageView
+            android:id="@+id/iv_tipo_usuario"
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/user_blue" />
+
+        <Spinner
+            android:id="@+id/tipo_usuario_admin"
+            android:layout_width="200dp"
+            android:layout_height="47dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:textColor="@color/blue"
+            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:outlineAmbientShadowColor="@color/blue"
+            android:outlineSpotShadowColor="@color/blue"
+            android:popupBackground="@color/white"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_crear_usuario_admin"
+        android:layout_width="307sp"
+        android:layout_height="54sp"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/registrar_usuario"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/ll_foot1_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/ll_foot1_admin"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:orientation="horizontal"
         android:paddingTop="10dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintBottom_toTopOf="@+id/ll_foot2"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp">
 
         <ImageView
-            android:id="@+id/iv_home"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/home"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ImageView
-            android:id="@+id/iv_car"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/carrito"
-            android:clickable="true"
-            android:focusable="true"/>
-
-        <ImageView
-            android:id="@+id/iv_map"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/map"
-            android:clickable="true"
-            android:focusable="true"/>
-
-        <ImageView
-            android:id="@+id/iv_user"
+            android:id="@+id/iv_usuariosAdmin"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/user_blue"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/iv_productos"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/product_green"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <ImageView
+            android:id="@+id/iv_comprasAdmin"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/carrito"
             android:clickable="true"
             android:focusable="true"/>
 
@@ -99,250 +308,38 @@
         tools:layout_editor_absoluteX="1dp">
 
         <TextView
-            android:id="@+id/tv_home"
+            android:id="@+id/tv_usuariosAdmin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/inicio"
+            android:text="@string/usuarios_admin"
             android:textAlignment="center"
-            android:textColor="@color/green"
+            android:textColor="@color/blue"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_car"
+            android:id="@+id/tv_productos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/carrito"
-            android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:id="@+id/tv_map"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/ubicacion"
+            android:text="@string/productos_admin"
             android:textAlignment="center"
             android:textColor="@color/green"
             android:textSize="15sp"
             android:textStyle="bold" />
 
+
         <TextView
-            android:id="@+id/tv_user"
+            android:id="@+id/tv_comprasAdmin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/cuenta"
+            android:text="@string/compras_admin"
             android:textAlignment="center"
-            android:textColor="@color/blue"
+            android:textColor="@color/green"
             android:textSize="15sp"
             android:textStyle="bold" />
+
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/sub_perfil"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/iv_Photo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <LinearLayout
-        android:id="@+id/ll_entrada1"
-        android:layout_width="327dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/ll_entrada2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/iv_name"
-            android:layout_width="47dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/user_blue" />
-
-        <EditText
-            android:id="@+id/et_newname"
-            android:layout_width="263dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/blue"
-            android:ems="10"
-            android:textColor="@color/blue"
-            android:hint="@string/nombre"
-            android:inputType="text"
-            android:textColorHint="@color/blue" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_entrada2"
-        android:layout_width="327dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/ll_entrada3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/iv_first_name"
-            android:layout_width="47dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/user_blue" />
-
-        <EditText
-            android:id="@+id/et_newfirst_name"
-            android:layout_width="263dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/blue"
-            android:ems="10"
-            android:hint="@string/Apellido"
-            android:textColor="@color/blue"
-            android:inputType="text"
-            android:textColorHint="@color/blue" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_entrada3"
-        android:layout_width="327dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/ll_entrada4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/iv_phone"
-            android:layout_width="47dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/phone" />
-
-        <EditText
-            android:id="@+id/et_newphone"
-            android:layout_width="263dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/blue"
-            android:ems="10"
-            android:hint="@string/telefono"
-            android:textColor="@color/blue"
-            android:inputType="phone"
-            android:textColorHint="@color/blue"
-            tools:ignore="TextFields" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_entrada4"
-        android:layout_width="327dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/ll_entrada5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/iv_adress"
-            android:layout_width="35dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/mail" />
-
-        <EditText
-            android:id="@+id/et_newadress"
-            android:layout_width="263dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/blue"
-            android:ems="10"
-            android:hint="@string/direccion"
-            android:textColor="@color/blue"
-            android:inputType="textEmailAddress"
-            android:textColorHint="@color/blue" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_entrada5"
-        android:layout_width="327dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/btn_actualizar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/iv_password"
-            android:layout_width="47dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/password" />
-
-        <EditText
-            android:id="@+id/et_newpassword"
-            android:layout_width="263dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/blue"
-            android:ems="10"
-            android:hint="@string/contrasena"
-            android:textColor="@color/blue"
-            android:inputType="textPassword"
-            android:textColorHint="@color/blue" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_actualizar"
-        android:layout_width="280sp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/blue"
-        android:text="@string/update"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/ll_foot1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_Photo"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        app:layout_constraintBottom_toTopOf="@id/tv_tomarfoto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/foto" />
-
-    <TextView
-        android:id="@+id/tv_tomarfoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Tomar_foto"
-        android:layout_marginBottom="40dp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/ll_entrada1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

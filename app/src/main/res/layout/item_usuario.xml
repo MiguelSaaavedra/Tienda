@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="8dp"
+    app:cardMaxElevation="4dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_lista_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:text="@string/nombre"
+            android:textColor="@color/orange"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_lista_telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/telefono"
+            android:textColor="@color/green"
+            android:layout_marginStart="40dp"/>
+
+        <TextView
+            android:id="@+id/tv_lista_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/direccion"
+            android:textColor="@color/green"
+            android:layout_marginStart="40dp"/>
+
+        <TextView
+            android:id="@+id/tv_lista_contrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/contrasena"
+            android:textColor="@color/green"
+            android:layout_marginStart="40dp"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_actualizar_usuario"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/actualizar_usuario"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:backgroundTint="@color/blue"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <Button
+                android:id="@+id/btn_eliminar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Eliminar"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:backgroundTint="@color/blue"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

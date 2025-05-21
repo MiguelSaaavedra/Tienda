@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tienda"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAhM3N2djgZDDlRgkq7KBx26t9XYtqQyYI"/>
+
         <activity
             android:name=".Activities.SplashActivity"
             android:exported="true">
@@ -35,6 +43,27 @@
             android:exported="false"/>
         <activity android:name=".Activities.CuentaActivity"
             android:exported="false"/>
+        <activity android:name=".Activities.VerUsuariosActivity"
+            android:exported="false"/>
+        <activity android:name=".Activities.CrearUsuarioActivity"
+            android:exported="false"/>
+        <activity android:name=".Activities.UsuariosAdminActivity"
+            android:exported="false"/>
+        <activity android:name=".Activities.ActualizarUsuarioActivity"
+            android:exported="false"/>
+        <activity android:name=".Activities.BuscarUnUsuario"
+            android:exported="false"/>
+        <activity android:name=".Activities.ProductoAdminActivity"
+            android:exported="false"/>
+        <activity android:name=".Activities.CrearProducto"
+            android:exported="false"/>
+        <activity android:name=".Activities.ActualizarProductoActivity"
+            android:exported="false"/>
+        <activity android:name=".Activities.VerProductosActivity"
+            android:exported="false"/>
+        <activity android:name=".Activities.BuscarUnProducto"
+            android:exported="false"/>
+
     </application>
 
 </manifest>

@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white">
 
     <LinearLayout
@@ -18,7 +17,7 @@
 
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/logoImageView"
+            android:id="@+id/iv_logo"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_gravity="center"
@@ -37,11 +36,63 @@
             android:text="@string/app_name"
             android:textColor="@color/white"
             android:textSize="40sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/ll_head"
+        android:padding="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:gravity="left">
+
+            <EditText
+                android:id="@+id/et_buscar_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/ingrese_el_id_del_usuario"
+                android:backgroundTint="@color/blue"
+                android:inputType="number"
+                android:gravity="bottom"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue"/>
+
+
+            <Button
+                android:id="@+id/btn_buscar_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_buscar_usuario"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:backgroundTint="@color/blue"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/resultado_temporal"
+            android:textSize="16sp"
+            android:paddingTop="16dp"
+            android:textColor="@color/blue"
+            android:textStyle="bold"/>
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_foot1"
+        android:id="@+id/ll_foot1_admin"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:orientation="horizontal"
@@ -51,16 +102,25 @@
         tools:layout_editor_absoluteX="0dp">
 
         <ImageView
-            android:id="@+id/iv_home"
+            android:id="@+id/iv_usuariosAdmin"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/home"
+            app:srcCompat="@drawable/user_blue"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/iv_productos"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/product_green"
             android:clickable="true"
             android:focusable="true"/>
 
         <ImageView
-            android:id="@+id/iv_car"
+            android:id="@+id/iv_comprasAdmin"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_weight="1"
@@ -68,23 +128,6 @@
             android:clickable="true"
             android:focusable="true"/>
 
-        <ImageView
-            android:id="@+id/iv_map"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/map_azul"
-            android:clickable="true"
-            android:focusable="true"/>
-
-        <ImageView
-            android:id="@+id/iv_user"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/user"
-            android:clickable="true"
-            android:focusable="true"/>
 
     </LinearLayout>
 
@@ -98,89 +141,38 @@
         tools:layout_editor_absoluteX="1dp">
 
         <TextView
-            android:id="@+id/tv_home"
+            android:id="@+id/tv_usuariosAdmin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/inicio"
-            android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_car"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/carrito"
-            android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:id="@+id/tv_map"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/ubicacion"
+            android:text="@string/usuarios_admin"
             android:textAlignment="center"
             android:textColor="@color/blue"
-            android:textSize="15sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_user"
+            android:id="@+id/tv_productos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/cuenta"
+            android:text="@string/productos_admin"
             android:textAlignment="center"
             android:textColor="@color/green"
             android:textSize="15sp"
             android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_comprasAdmin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/compras_admin"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_subtitle"
-        android:layout_width="233dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/subtitle_car2"
-        android:textAlignment="center"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_head">
-
-    </TextView>
-
-    <TextView
-        android:id="@+id/tv_subtitle2"
-        android:layout_width="233dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/subtitle_car4"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle">
-
-    </TextView>
-
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        app:layout_constraintBottom_toTopOf="@+id/ll_foot1"
-        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
