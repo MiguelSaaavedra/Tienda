@@ -26,10 +26,9 @@ class ActualizarProductoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_actualizar_producto)
 
         var producto = intent.getParcelableExtra<Producto>("producto")
-        Toast.makeText(this, "Producto recibido: ${producto?.nombreProducto}", Toast.LENGTH_SHORT).show()
-
         val ivusuarios = findViewById<ImageView>(R.id.iv_usuariosAdmin)
         val ivproductos = findViewById<ImageView>(R.id.iv_productos)
+        val ivcompras = findViewById<ImageView>(R.id.iv_comprasAdmin)
 
         etNombre = findViewById(R.id.et_titulo_update)
         etCosto = findViewById(R.id.et_costo_update)
@@ -50,6 +49,10 @@ class ActualizarProductoActivity : AppCompatActivity() {
             startActivity(Intent(this, ProductoAdminActivity::class.java))
         }
 
+        ivcompras.setOnClickListener {
+            startActivity(Intent(this, ComprasActivity::class.java))
+        }
+
         btnActualizar.setOnClickListener {
             val nombre = etNombre.text.toString().trim()
             val costo = etCosto.text.toString().trim()
@@ -65,7 +68,6 @@ class ActualizarProductoActivity : AppCompatActivity() {
                     imagen = ubicacion
                 )
 
-                // Guardar usando Room en una corrutina
                 lifecycleScope.launch {
                     val db = AppDatabase.getDatabase(this@ActualizarProductoActivity)
                     db.productoDao().actualizarProducto(productoActualizado)

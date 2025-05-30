@@ -143,23 +143,6 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/sub_perfil"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/iv_Photo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
     <LinearLayout
         android:id="@+id/ll_entrada1"
         android:layout_width="327dp"
@@ -325,24 +308,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/iv_Photo"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        app:layout_constraintBottom_toTopOf="@id/tv_tomarfoto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/foto" />
-
-    <TextView
-        android:id="@+id/tv_tomarfoto"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/ll_area_foto"
+        android:layout_width="327dp"
         android:layout_height="wrap_content"
-        android:text="@string/Tomar_foto"
-        android:layout_marginBottom="40dp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@id/ll_entrada1"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/ll_entrada1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/sub_perfil"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_Photo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/foto"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircleImageView"/>
+
+        <Button
+            android:id="@+id/btn_tomarfoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:text="@string/Tomar_foto"
+            android:textSize="12sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

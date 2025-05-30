@@ -35,6 +35,12 @@ class BuscarUnUsuario : AppCompatActivity() {
         tvResultado = findViewById(R.id.tv_resultado)
         ivusuarios = findViewById<ImageView>(R.id.iv_usuariosAdmin)
         val ivproductos = findViewById<ImageView>(R.id.iv_productos)
+        val ivcompras = findViewById<ImageView>(R.id.iv_comprasAdmin)
+
+        ivcompras.setOnClickListener {
+            val intent = Intent(this, ComprasActivity::class.java)
+            startActivity(intent)
+        }
 
         ivproductos.setOnClickListener {
             val intent = Intent(this, ProductoAdminActivity::class.java)

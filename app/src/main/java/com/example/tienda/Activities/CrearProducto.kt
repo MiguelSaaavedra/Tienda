@@ -27,6 +27,12 @@ class CrearProducto : AppCompatActivity() {
         setContentView(R.layout.activity_crear_producto)
 
         val ivusuarios = findViewById<ImageView>(R.id.iv_usuariosAdmin)
+        val ivcompras = findViewById<ImageView>(R.id.iv_comprasAdmin)
+
+        ivcompras.setOnClickListener {
+            val intent = Intent(this, ComprasActivity::class.java)
+            startActivity(intent)
+        }
 
         ivusuarios.setOnClickListener {
             val intent = Intent(this, UsuariosAdminActivity::class.java)

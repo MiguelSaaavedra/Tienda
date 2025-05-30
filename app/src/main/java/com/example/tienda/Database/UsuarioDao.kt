@@ -22,4 +22,8 @@ interface UsuarioDao {
 
     @Query("SELECT * FROM usuario WHERE telefono = :telefono AND contrasena = :contrasena LIMIT 1")
     suspend fun login(telefono: String, contrasena: String): Usuario?
+
+    @Query("SELECT * FROM usuario WHERE telefono = :telefono LIMIT 1")
+    suspend fun obtenerPorTelefono(telefono: String): Usuario?
+
 }

@@ -37,6 +37,7 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
         val ivusuarios = findViewById<ImageView>(R.id.iv_usuariosAdmin)
         val ivproductos = findViewById<ImageView>(R.id.iv_productos)
         val spinnerOpciones = findViewById<Spinner>(R.id.tipo_usuario_admin_update)
+        val ivcompras = findViewById<ImageView>(R.id.iv_comprasAdmin)
 
 
 
@@ -69,11 +70,6 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
                 id: Long
             ) {
                 opcionSeleccionada = parent?.getItemAtPosition(position).toString()
-                Toast.makeText(
-                    this@ActualizarUsuarioActivity,
-                    "Seleccionaste: $opcionSeleccionada",
-                    Toast.LENGTH_SHORT
-                ).show()
             }
             override fun onNothingSelected(parent: AdapterView<*>?) {
                 // Puedes dejarlo vacío o manejar este caso
@@ -98,6 +94,10 @@ class ActualizarUsuarioActivity : AppCompatActivity() {
 
         ivproductos.setOnClickListener {
             startActivity(Intent(this, ProductoAdminActivity::class.java))
+        }
+
+        ivcompras.setOnClickListener {
+            startActivity(Intent(this, ComprasActivity::class.java))
         }
 
 

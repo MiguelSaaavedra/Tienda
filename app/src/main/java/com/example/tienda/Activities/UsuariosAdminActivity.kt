@@ -17,7 +17,7 @@ class UsuariosAdminActivity : AppCompatActivity() {
 
         val ivusuarios = findViewById<ImageView>(R.id.iv_usuariosAdmin)
         val ivproductos = findViewById<ImageView>(R.id.iv_productos)
-        //val ivcompras = findViewById<ImageView>(R.id.iv_compras_admin)
+        val ivcompras = findViewById<ImageView>(R.id.iv_comprasAdmin)
         val ivTodosUsuarios = findViewById<Button>(R.id.btn_ver_usuarios)
         val ivUnUsuario = findViewById<Button>(R.id.btn_ver_un_usuario)
         val ivCrearUsuario = findViewById<Button>(R.id.btn_crear_usuario)
@@ -44,6 +44,11 @@ class UsuariosAdminActivity : AppCompatActivity() {
 
         ivproductos.setOnClickListener {
             val intent = Intent(this, ProductoAdminActivity::class.java)
+            startActivity(intent)
+        }
+
+        ivcompras.setOnClickListener {
+            val intent = Intent(this, ComprasActivity::class.java)
             startActivity(intent)
         }
     }

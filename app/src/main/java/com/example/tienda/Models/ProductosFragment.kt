@@ -49,11 +49,6 @@ class ProductosFragment : Fragment() {
                 listaProductos,
                 onEliminar = { producto -> eliminarProducto(producto) },
                 onActualizar = { producto ->
-                    Toast.makeText(
-                        requireContext(),
-                        "Clic en actualizar: ${producto.nombreProducto}",
-                        Toast.LENGTH_SHORT
-                    ).show()
                     val intent = Intent(activity, ActualizarProductoActivity::class.java)
                     intent.putExtra("producto", producto)
                     actualizarProducto.launch(intent)

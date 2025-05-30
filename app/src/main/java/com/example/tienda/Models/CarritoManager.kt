@@ -1,7 +1,5 @@
 package com.example.tienda.Models
 
-import com.example.tienda.Models.Producto
-
 object CarritoManager {
     private val productosEnCarrito = mutableListOf<Producto>()
 

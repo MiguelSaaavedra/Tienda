@@ -22,6 +22,7 @@ class BuscarUnProducto : AppCompatActivity() {
     private lateinit var btnBuscar: Button
     private lateinit var tvResultado: TextView
     private lateinit var ivusuarios: ImageView
+    private lateinit var ivcompras: ImageView
 
 
     @SuppressLint("MissingInflatedId")
@@ -33,6 +34,18 @@ class BuscarUnProducto : AppCompatActivity() {
         btnBuscar = findViewById(R.id.btn_buscar_producto)
         tvResultado = findViewById(R.id.tv_resultado_producto)
         ivusuarios = findViewById<ImageView>(R.id.iv_usuariosAdmin)
+        ivcompras = findViewById<ImageView>(R.id.iv_comprasAdmin)
+        val ivproductos = findViewById<ImageView>(R.id.iv_productos)
+
+        ivproductos.setOnClickListener {
+            val intent = Intent(this, ProductoAdminActivity::class.java)
+            startActivity(intent)
+        }
+
+        ivcompras.setOnClickListener {
+            val intent = Intent(this, ComprasActivity::class.java)
+            startActivity(intent)
+        }
 
         ivusuarios.setOnClickListener {
             val intent = Intent(this, UsuariosAdminActivity::class.java)

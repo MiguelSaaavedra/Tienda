@@ -20,6 +20,7 @@ class ProductoAdminActivity : AppCompatActivity() {
         val ivCrearProducto = findViewById<Button>(R.id.btn_crear_producto)
         val ivlistaProductos = findViewById<Button>(R.id.btn_ver_producto)
         val btnUnProducto = findViewById<Button>(R.id.btn_ver_un_producto)
+        val ivcompras = findViewById<ImageView>(R.id.iv_comprasAdmin)
 
         ivusuarios.setOnClickListener {
             val intent = Intent(this, UsuariosAdminActivity::class.java)
@@ -45,6 +46,12 @@ class ProductoAdminActivity : AppCompatActivity() {
             val intent = Intent(this, BuscarUnProducto::class.java)
             startActivity(intent)
         }
+
+        ivcompras.setOnClickListener {
+            val intent = Intent(this, ComprasActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
     }

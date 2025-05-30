@@ -14,10 +14,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.tienda.Database.AppDatabase
+import com.example.tienda.Models.Usuario
 import com.example.tienda.R
 import com.google.android.gms.common.api.ApiException
 import kotlinx.coroutines.launch
 import com.google.android.gms.tasks.Task
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class LogInActivity : AppCompatActivity() {
 
@@ -81,7 +84,7 @@ class LogInActivity : AppCompatActivity() {
                                 intent.putExtra(
                                     "usuarioId",
                                     usuario.id
-                                ) // opcional: pasar info del usuario
+                                )
                                 startActivity(intent)
                                 finish()
 
@@ -133,10 +136,43 @@ class LogInActivity : AppCompatActivity() {
             Log.d(TAG, "signInSuccess: ${account.email}")
             Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show()
 
-            intent = Intent(this, ProductActivity::class.java)
-            intent.putExtra("email", account.email)
-            intent.putExtra("name", account.displayName)
-            startActivity(intent)
+            val email = account.email ?: return
+            val nombre = account.givenName ?: ""
+            val apellido = account.familyName ?: ""
+            val telefono = email
+            val direccion = "No especificada"
+            val contrasena = "google" // o puedes usar el ID de Google
+
+            // Lógica Room en corrutina
+            lifecycleScope.launch {
+                val db = AppDatabase.getDatabase(this@LogInActivity)
+                val usuarioExistente = db.usuarioDao().obtenerPorTelefono(telefono)
+
+                val usuarioFinal: Usuario = if (usuarioExistente == null) {
+                    // Crear nuevo usuario
+                    val nuevoUsuario = Usuario(
+                        nombre = nombre,
+                        apellido = apellido,
+                        telefono = telefono,
+                        direccion = direccion,
+                        contrasena = contrasena
+                    )
+                    db.usuarioDao().insertarUsuario(nuevoUsuario)
+
+                    // Obtener el usuario recién insertado (para obtener el ID autogenerado)
+                    db.usuarioDao().obtenerPorTelefono(telefono)!!
+                } else {
+                    usuarioExistente
+                }
+
+                // Abrir ProductActivity con el usuario
+                withContext(Dispatchers.Main) {
+                    val intent = Intent(this@LogInActivity, ProductActivity::class.java)
+                    intent.putExtra("usuarioId", usuarioFinal.id)
+                    startActivity(intent)
+                    finish()
+                }
+            }
 
         } catch (e: ApiException) {
             Log.w(TAG, "signInResult:failed code=" + e.statusCode)

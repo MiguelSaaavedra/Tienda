@@ -35,6 +35,12 @@ class CrearUsuarioActivity : AppCompatActivity() {
         val ivusuarios = findViewById<ImageView>(R.id.iv_usuariosAdmin)
         val spinnerOpciones = findViewById<Spinner>(R.id.tipo_usuario_admin)
         val ivproductos = findViewById<ImageView>(R.id.iv_productos)
+        val ivcompras = findViewById<ImageView>(R.id.iv_comprasAdmin)
+
+        ivcompras.setOnClickListener {
+            val intent = Intent(this, ComprasActivity::class.java)
+            startActivity(intent)
+        }
 
 
         ivusuarios.setOnClickListener {
